@@ -1,0 +1,28 @@
+.login{
+    /* border: 1px solid black; */
+    background-image: url(img/form1.jpg);
+    width: 500px;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+input{
+    width: 500px;
+    border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  
+}
+button{
+    margin-left: 150px;
+    border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-left: 200px;
+  
+}
