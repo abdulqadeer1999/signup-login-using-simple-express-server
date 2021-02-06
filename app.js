@@ -1,7 +1,7 @@
 
-const url = 'http://localhost:5000';
+// const url = 'http://localhost:5000';
 
-// const url = "https://new-login-signup.herokuapp.com"
+const url = "https://new-login-signup.herokuapp.com"
 
 function postSignUp(){
     user = {
