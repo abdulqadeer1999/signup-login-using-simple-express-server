@@ -21,51 +21,12 @@ var app = express();
 
 app.use(cors());
 
-// jaisa ya hum nai pora ak log banya han is kae liya hum package use karay gayn jo banae howa
-// wo huma nai use karna han iskae liya "Morgan package use karay gayn"
-// app.use(function (req, reponse, next) {
-//     console.log("Method :" + req.method);
-//     console.log("URL :" + req.url);
-//     console.log("Connection is :" + req.connection.remoteAddress);
-//     console.log("Connection is Port :" + req.connection.remotePort);
-//     next();
-// });
 
 app.use(morgan('dev'));
 app.use(bodyParser.json())
 
 
 
-// app.get('', (req, res) => {
-//     res.render('index');
-// })
-
-// app.get('/signup', (req, res) => {
-//     res.render('signup');
-// })
-
-
-
-// app.get('/', function (req, res) {
-//     res.render('index.html');
-// });
-
-
-// app.get('/', (request, response, next) => {
-//     response.writeHead(200, {
-//         'Content-Type': 'text/html'
-//     });
-//     fs.readFile('./index.html', null, function (error, data) {
-//         if (error) {
-//             response.writeHead(404);
-//             respone.write('Whoops! File not found!');
-//         } else {
-//             response.write(data);
-//         }
-//         response.end();
-//     });
-
-// });
 app.get("/", (req, res, next) => {
     console.log("some one get menu");
     res.send("signup success full");
@@ -102,7 +63,7 @@ app.post('/signup', (req, res) => {
 
 })
 
-app.post('/login', (req, res) => {
+app.post('/signin', (req, res) => {
 
 
     let isFound = false;
