@@ -1,9 +1,8 @@
 
 let users = [
     {
-        name: "Sameer",
-        // fathername: "Ali",
-        email: "sameer@gmail.com",
+        name: "Qadeer",
+        email: "qadeer@gmail.com",
         password: "123"
     },
 
@@ -103,7 +102,7 @@ app.post('/signup', (req, res) => {
 
 })
 
-app.post('/signin', (req, res) => {
+app.post('/login', (req, res) => {
 
 
     let isFound = false;
