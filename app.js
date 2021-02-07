@@ -33,3 +33,53 @@ function postSignUp(){
     }
     return false;
 }
+
+
+
+
+
+
+function login() {
+
+    let Emails = document.getElementById("email").value;
+    let Passwords = document.getElementById("password").value;
+
+    const Http = new XMLHttpRequest();
+
+    Http.open("POST", url + "/login");
+    Http.setRequestHeader("Content-Type", "application/json");
+
+    Http.send(JSON.stringify({
+        email: Emails,
+        password: Passwords
+    }));
+
+    Http.onreadystatechange = (e) => {
+        if (Http.readyState === 4) {
+            let JSONres = JSON.parse(Http.responseText)
+            if (JSONres.status === 200) {
+                document.getElementById('email').value = ""
+                document.getElementById('password').value = ""
+
+                document.getElementById("Result").innerText = JSONres.message;
+                document.getElementById("name").innerText = "Name :" + JSONres.user.name;
+                document.getElementById("email").innerText = "Email :" + JSONres.user.email;
+            }
+            else if (JSONres.status > 200) {
+                document.getElementById("Result").innerText = JSONres.message;
+                document.getElementById("name").innerText = "";
+                document.getElementById("email").innerText = "";
+            }
+            else {
+                document.getElementById("Result").innerText = JSONres.message;
+            }
+
+        }
+
+
+    }
+
+
+    return false;
+}
+
